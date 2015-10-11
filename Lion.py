@@ -5,4 +5,11 @@ __author__ = 'raygomez'
 
 class Lion(Panthera):
 
-    pass
+    def __init__(self, gender):
+        Panthera.__init__(self, 'Lion', gender)
+
+    def getMaleName(self):
+        return 'Li'
+
+    def getFemaleName(self):
+        return 'oness'
