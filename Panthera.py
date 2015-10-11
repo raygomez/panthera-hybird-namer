@@ -23,8 +23,6 @@ class Panthera(object):
         return '{}({},{})'.format(self.name, self.gender, self.generation)
 
     def __add__(self, other):
-        offspring = self.getOffspring(other)
-
         mother = None
         father = None
 
@@ -43,7 +41,7 @@ class Panthera(object):
                             format(self.name,self.gender,
                                    other.name, self.gender))
 
-        return offspring
+        return self.getOffspring(other)
 
     def getOffspring(self, other):
         raise NotImplementedError('GetOffspring should be implemented.')
