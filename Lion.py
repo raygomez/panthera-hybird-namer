@@ -4,4 +4,5 @@ from Panthera import Panthera
 __author__ = 'raygomez'
 
 class Lion(Panthera):
+
     pass
