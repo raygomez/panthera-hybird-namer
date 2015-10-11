@@ -15,4 +15,15 @@ class TestPanthera(TestCase):
         with self.assertRaises(TypeError):
             lion1 + lion2
 
+    def testOffspringOfLionAndLioness(self):
 
+        lion1 = Lion('M')
+        lioness2 = Lion('F')
+
+        offspring = lion1 + lioness2
+
+        if offspring.gender == 'M':
+            self.assertEqual('Lion', offspring.name)
+        else:
+            self.assertEqual('Lioness', offspring.name)
+        self.assertEqual(1, offspring.generation)

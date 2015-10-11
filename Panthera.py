@@ -5,16 +5,25 @@ __author__ = 'raygomez'
 
 
 class Panthera(object):
-    def __init__(self, name, gender):
-        self.name = name
+    def __init__(self, gender = random.choice('MF')):
         self.generation = 1
-        self.gender = gender
+
+        if gender == 'M' or gender == 'F':
+            self.gender = gender
+            if gender == 'M':
+                self.name = self.getMaleName()
+            else:
+                self.name = self.getFemaleName()
+        else:
+            raise TypeError('Invalid gender:{}'.format(gender))
+
+
 
     def __repr__(self):
         return '{}({},{})'.format(self.name, self.gender, self.generation)
 
     def __add__(self, other):
-        offspring = Panthera("", random.choice('MF'))
+        offspring = self.getOffspring(other)
 
         mother = None
         father = None
@@ -34,15 +43,13 @@ class Panthera(object):
                             format(self.name,self.gender,
                                    other.name, self.gender))
 
-        offspring.name = self.getMaleName() + self.getFemaleName()
-        if self.name == other.name:
-            self.generation = self.generation
-        else:
-            offspring.generation = str(int(max(self.generation, other.generation)) + 1)
         return offspring
 
+    def getOffspring(self, other):
+        raise NotImplementedError('GetOffspring should be implemented.')
+
     def getMaleName(self):
-        raise NotImplementedError('Not implemented')
+        raise NotImplementedError('GetMaleName should be implemented.')
 
     def getFemaleName(self):
-        raise NotImplementedError('Not implemented')
+        raise NotImplementedError('GetFemaleName should be implemented.')
