@@ -1,6 +1,7 @@
 from __future__ import print_function
 from unittest import TestCase
 from Lion import Lion
+from Tiger import Tiger
 
 __author__ = 'raygomez'
 
@@ -26,4 +27,17 @@ class TestPanthera(TestCase):
             self.assertEqual('Lion', offspring.name)
         else:
             self.assertEqual('Lioness', offspring.name)
+        self.assertEqual(1, offspring.generation)
+
+    def testOffspringOfTigerAndTrigress(self):
+
+        tiger = Tiger('M')
+        tigress = Tiger('F')
+
+        offspring = tiger + tigress
+
+        if offspring.gender == 'M':
+            self.assertEqual('Tiger', offspring.name)
+        else:
+            self.assertEqual('Tigress', offspring.name)
         self.assertEqual(1, offspring.generation)
