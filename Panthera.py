@@ -17,8 +17,6 @@ class Panthera(object):
         else:
             raise TypeError('Invalid gender:{}'.format(gender))
 
-
-
     def __repr__(self):
         return '{}({},{})'.format(self.name, self.gender, self.generation)
 
@@ -44,10 +42,16 @@ class Panthera(object):
         return self.getOffspring(other)
 
     def getOffspring(self, other):
-        raise NotImplementedError('GetOffspring should be implemented.')
-
+        raise NotImplementedError('Unknown hybrid: {} + {}'.format(self.__class__.__name__,
+                                                                   other.__class__.__name__))
     def getMaleName(self):
         raise NotImplementedError('GetMaleName should be implemented.')
 
     def getFemaleName(self):
         raise NotImplementedError('GetFemaleName should be implemented.')
+
+    def isMale(self):
+        return self.gender == 'M'
+
+    def isFemale(self):
+        return self.gender == 'F'
