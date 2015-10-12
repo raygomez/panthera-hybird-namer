@@ -26,7 +26,7 @@ class TestPanthera(TestCase):
     tigoness1 = Tigon('F')
     jagupardess1 = Jagupard('F')
     leguaress1 = Leguar('F')
-    liguaress1 =  Liguar('F')
+    liguaress1 = Liguar('F')
 
     def testRaiseExceptionIfSameGender(self):
 
@@ -132,7 +132,6 @@ class TestPanthera(TestCase):
         else:
             self.assertEqual('Liliguaress', offspring.name)
         self.assertEqual(3, offspring.generation)
-
 
     def testOffspringOfTigerAndLioness(self):
 
@@ -263,6 +262,56 @@ class TestPanthera(TestCase):
         else:
             self.assertEqual('Jagupardess', offspring.name)
         self.assertEqual(2, offspring.generation)
+
+    def testOffspringOfJaguarAndLigress(self):
+
+        offspring = self.jaguar1 + self.ligress1
+
+        if offspring.gender == 'M':
+            self.assertEqual('Jagliger', offspring.name)
+        else:
+            self.assertEqual('Jagligress', offspring.name)
+        self.assertEqual(3, offspring.generation)
+
+    def testOffspringOfJaguarAndTigoness(self):
+
+        offspring = self.jaguar1 + self.tigoness1
+
+        if offspring.gender == 'M':
+            self.assertEqual('Jagtigon', offspring.name)
+        else:
+            self.assertEqual('Jagtigoness', offspring.name)
+        self.assertEqual(3, offspring.generation)
+
+    def testOffspringOfJaguarAndJagupardess(self):
+
+        offspring = self.jaguar1 + self.jagupardess1
+
+        if offspring.gender == 'M':
+            self.assertEqual('Jagjagupard', offspring.name)
+        else:
+            self.assertEqual('Jagjagupardess', offspring.name)
+        self.assertEqual(3, offspring.generation)
+
+    def testOffspringOfJaguarAndLeguaress(self):
+
+        offspring = self.jaguar1 + self.leguaress1
+
+        if offspring.gender == 'M':
+            self.assertEqual('Jagleguar', offspring.name)
+        else:
+            self.assertEqual('Jagleguaress', offspring.name)
+        self.assertEqual(3, offspring.generation)
+
+    def testOffspringOfJaguarAndLiguaress(self):
+
+        offspring = self.jaguar1 + self.liguaress1
+
+        if offspring.gender == 'M':
+            self.assertEqual('Jagliguar', offspring.name)
+        else:
+            self.assertEqual('Jagliguaress', offspring.name)
+        self.assertEqual(3, offspring.generation)
 
     def testOffspringOfLeopardAndLioness(self):
 
