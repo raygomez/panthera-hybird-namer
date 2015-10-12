@@ -93,7 +93,6 @@ class TestPanthera(TestCase):
             self.assertEqual('Tigress', offspring.name)
         self.assertEqual(1, offspring.generation)
 
-
     def testOffspringOfTigerAndJaguaress(self):
 
         offspring = self.tiger1 + self.jaguaress1
@@ -102,7 +101,7 @@ class TestPanthera(TestCase):
             self.assertEqual('Tiguar', offspring.name)
         else:
             self.assertEqual('Tiguaress', offspring.name)
-        self.assertEqual(1, offspring.generation)
+        self.assertEqual(2, offspring.generation)
 
     def testOffspringOfTigerAndLeopardess(self):
 
