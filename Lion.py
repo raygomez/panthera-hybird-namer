@@ -9,6 +9,7 @@ from Lijagupard import Lijagupard
 from Lileguar import Lileguar
 from Liliger import Liliger
 from Liliguar import Liliguar
+from Lililiger import Lililiger
 import Lipard
 from Litigon import Litigon
 from Panthera import Panthera
@@ -45,6 +46,8 @@ class Lion(Panthera):
             return Lileguar()
         elif isinstance(other, Liguar.Liguar):
             return Liliguar()
+        elif isinstance(other, Liliger):
+            return Lililiger()
         Panthera.getOffspring(self, other)
 
 
