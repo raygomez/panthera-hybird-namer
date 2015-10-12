@@ -39,7 +39,7 @@ class Panthera(object):
                             format(self.name,self.gender,
                                    other.name, self.gender))
 
-        return self.getOffspring(other)
+        return father.getOffspring(other)
 
     def getOffspring(self, other):
         raise NotImplementedError('Unknown hybrid: {} + {}'.format(self.__class__.__name__,

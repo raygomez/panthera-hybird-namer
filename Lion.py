@@ -1,29 +1,13 @@
 from __future__ import print_function
 from Jaguar import Jaguar
+from Leopard import Leopard
+from Liger import Liger
 from Liguar import Liguar
+from Lipard import Lipard
 from Panthera import Panthera
 from Tiger import Tiger
 
 __author__ = 'raygomez'
-
-
-class Liger(Panthera):
-
-    def __init__(self):
-        Panthera.__init__(self)
-        self.generation = 2
-
-    def getMaleName(self):
-        return 'Liger'
-
-    def getFemaleName(self):
-        return 'Ligress'
-
-    def getOffspring(self, other):
-        if isinstance(other, Liger):
-            return Liger()
-
-
 
 class Lion(Panthera):
 
@@ -36,14 +20,12 @@ class Lion(Panthera):
     def getOffspring(self, other):
         if isinstance(other, Lion):
             return Lion()
-
         elif isinstance(other, Tiger):
-            if self.isMale():
-                return Liger()
+            return Liger()
         elif isinstance(other, Jaguar):
-            if self.isMale():
-                return Liguar()
-
+            return Liguar()
+        elif isinstance(other, Leopard):
+            return Lipard()
         Panthera.getOffspring(self, other)
 
 
