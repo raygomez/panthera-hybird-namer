@@ -15,6 +15,8 @@ class Lion(Panthera):
     def getOffspring(self, other):
         if isinstance(other, Lion):
             return Lion()
-
+        else:
+            raise NotImplementedError('Unknown hybrid: {} + {}'.format(self.__class__.__name__,
+                                                                       other.__class__.__name__))
 
 
