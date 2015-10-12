@@ -1,23 +1,23 @@
 from __future__ import print_function
-
 from Panthera import Panthera
 
 __author__ = 'ragomez'
 
-
-class Liger(Panthera):
+class Liguar(Panthera):
 
     def __init__(self):
         Panthera.__init__(self)
         self.generation = 2
 
     def getMaleName(self):
-        return 'Liger'
+        return 'Liguar'
 
     def getFemaleName(self):
-        return 'Ligress'
+        return 'Liguaress'
 
     def getOffspring(self, other):
-        if isinstance(other, Liger):
-            return Liger()
+        if isinstance(other, Liguar):
+            return Liguar()
+
         Panthera.getOffspring(self,other)
+

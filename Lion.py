@@ -1,4 +1,6 @@
 from __future__ import print_function
+from Jaguar import Jaguar
+from Liguar import Liguar
 from Panthera import Panthera
 from Tiger import Tiger
 
@@ -22,6 +24,7 @@ class Liger(Panthera):
             return Liger()
 
 
+
 class Lion(Panthera):
 
     def getMaleName(self):
@@ -37,6 +40,9 @@ class Lion(Panthera):
         elif isinstance(other, Tiger):
             if self.isMale():
                 return Liger()
+        elif isinstance(other, Jaguar):
+            if self.isMale():
+                return Liguar()
 
         Panthera.getOffspring(self, other)
 

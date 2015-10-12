@@ -45,6 +45,17 @@ class TestPanthera(TestCase):
             self.assertEqual('Ligress', offspring.name)
         self.assertEqual(2, offspring.generation)
 
+    def testOffspringOfLionAndJaguaress(self):
+
+        offspring = self.lion1 + self.jaguaress1
+
+        if offspring.gender == 'M':
+            self.assertEqual('Liguar', offspring.name)
+        else:
+            self.assertEqual('Liguaress', offspring.name)
+        self.assertEqual(2, offspring.generation)
+
+
     def testOffspringOfTigerAndTigress(self):
 
         offspring = self.tiger1 + self.tigress1
