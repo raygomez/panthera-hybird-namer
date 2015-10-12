@@ -1,12 +1,14 @@
 from __future__ import print_function
+import random
 from Panthera import Panthera
 
 __author__ = 'ragomez'
 
+
 class JagLion(Panthera):
 
-    def __init__(self):
-        Panthera.__init__(self)
+    def __init__(self, gender=random.choice('MF')):
+        Panthera.__init__(self, gender)
         self.generation = 2
 
     def getMaleName(self):
@@ -19,5 +21,4 @@ class JagLion(Panthera):
         if isinstance(other, JagLion):
             return JagLion()
 
-        Panthera.getOffspring(self,other)
-
+        Panthera.getOffspring(self, other)
