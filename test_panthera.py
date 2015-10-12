@@ -1,4 +1,5 @@
 from __future__ import print_function
+import random
 from unittest import TestCase
 from Jaguar import Jaguar
 from Jagupard import Jagupard
@@ -12,6 +13,7 @@ from Lililiger import Lililiger
 from Lion import Lion
 from Tiger import Tiger
 from Tigon import Tigon
+from Tiliguar import Tiliguar
 
 __author__ = 'raygomez'
 
@@ -427,10 +429,10 @@ class TestPanthera(TestCase):
         self.assertEqual(4, offspring.generation)
 
     def testSortingSameGeneration(self):
-        lion = Lion('M')
-        tiger = Tiger('F')
-        jaguar = Jaguar('M')
-        leopard = Leopard('M')
+        lion = Lion()
+        tiger = Tiger()
+        jaguar = Jaguar()
+        leopard = Leopard()
         list_of_animals = [lion, tiger, jaguar, leopard]
         list_of_animals.sort()
 
@@ -441,10 +443,10 @@ class TestPanthera(TestCase):
 
     def testSortingDifferentGeneration(self):
 
-        lion = Lion('M')
-        tigon = Tigon('M')
-        liligress = Liliger('F')
-        lililiger = Lililiger('M')
+        lion = Lion()
+        tigon = Tigon()
+        liligress = Liliger()
+        lililiger = Lililiger()
         list_of_animals = [lililiger, lion, liligress, tigon]
         list_of_animals.sort()
 
@@ -452,3 +454,26 @@ class TestPanthera(TestCase):
         self.assertEqual(tigon, list_of_animals[1])
         self.assertEqual(liligress, list_of_animals[2])
         self.assertEqual(lililiger, list_of_animals[3])
+
+    def testSortingDifferentGenerationWithShuffledList(self):
+
+        lion = Lion()
+        jaguar = Jaguar()
+        tigon = Tigon()
+        leguar = Leguar()
+        liligress = Liliger()
+        tiliguar = Tiliguar()
+        lililiger = Lililiger()
+
+        list_of_animals = [lililiger, tiliguar, lion, liligress, tigon, jaguar, leguar]
+
+        random.shuffle(list_of_animals)
+        list_of_animals.sort()
+
+        self.assertEqual(jaguar, list_of_animals[0])
+        self.assertEqual(lion, list_of_animals[1])
+        self.assertEqual(leguar, list_of_animals[2])
+        self.assertEqual(tigon, list_of_animals[3])
+        self.assertEqual(liligress, list_of_animals[4])
+        self.assertEqual(tiliguar, list_of_animals[5])
+        self.assertEqual(lililiger, list_of_animals[6])
