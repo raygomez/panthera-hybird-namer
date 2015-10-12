@@ -4,6 +4,7 @@ from Jaguar import Jaguar
 from Jagupard import Jagupard
 from Leguar import Leguar
 from Leopard import Leopard
+from Leopon import Leopon
 from Liger import Liger
 from Liguar import Liguar
 from Lion import Lion
@@ -403,3 +404,14 @@ class TestPanthera(TestCase):
             self.assertEqual('Leoliguaress', offspring.name)
         self.assertEqual(3, offspring.generation)
 
+    def testOffspringLeoponAndLiguaress(self):
+
+        leopon1 = Leopon('M')
+        liguaress1 = Liguar('F')
+
+        offspring = leopon1 + liguaress1
+        self.assertEqual('Leoligulor', offspring.name)
+        self.assertEqual(3, offspring.generation)
+
+    def testOffspringLionAndLiligress(self):
+        pass

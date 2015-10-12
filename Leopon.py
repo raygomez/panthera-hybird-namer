@@ -1,8 +1,12 @@
 from __future__ import print_function
 import random
+
+from Leoligulor import Leoligulor
+import Liguar
 from Panthera import Panthera
 
 __author__ = 'ragomez'
+
 
 class Leopon(Panthera):
 
@@ -17,7 +21,10 @@ class Leopon(Panthera):
         return 'Leoponess'
 
     def getOffspring(self, other):
-        if isinstance(other, Leopon):
+
+        if isinstance(other, Liguar.Liguar):
+            return Leoligulor()
+        elif isinstance(other, Leopon):
             return Leopon()
 
         Panthera.getOffspring(self,other)
