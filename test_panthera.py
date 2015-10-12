@@ -8,6 +8,7 @@ from Leopon import Leopon
 from Liger import Liger
 from Liguar import Liguar
 from Liliger import Liliger
+from Lililiger import Lililiger
 from Lion import Lion
 from Tiger import Tiger
 from Tigon import Tigon
@@ -424,3 +425,30 @@ class TestPanthera(TestCase):
         else:
             self.assertEqual('Li-liligress', offspring.name)
         self.assertEqual(4, offspring.generation)
+
+    def testSortingSameGeneration(self):
+        lion = Lion('M')
+        tiger = Tiger('F')
+        jaguar = Jaguar('M')
+        leopard = Leopard('M')
+        list_of_animals = [lion, tiger, jaguar, leopard]
+        list_of_animals.sort()
+
+        self.assertEqual(jaguar, list_of_animals[0])
+        self.assertEqual(leopard, list_of_animals[1])
+        self.assertEqual(lion, list_of_animals[2])
+        self.assertEqual(tiger, list_of_animals[3])
+
+    def testSortingDifferentGeneration(self):
+
+        lion = Lion('M')
+        tigon = Tigon('M')
+        liligress = Liliger('F')
+        lililiger = Lililiger('M')
+        list_of_animals = [lililiger, lion, liligress, tigon]
+        list_of_animals.sort()
+
+        self.assertEqual(lion, list_of_animals[0])
+        self.assertEqual(tigon, list_of_animals[1])
+        self.assertEqual(liligress, list_of_animals[2])
+        self.assertEqual(lililiger, list_of_animals[3])

@@ -5,7 +5,7 @@ from Panthera import Panthera
 __author__ = 'ragomez'
 
 
-class JagLion(Panthera):
+class Jaglion(Panthera):
 
     def __init__(self, gender=random.choice('MF')):
         Panthera.__init__(self, gender)
@@ -18,7 +18,7 @@ class JagLion(Panthera):
         return 'JagLioness'
 
     def getOffspring(self, other):
-        if isinstance(other, JagLion):
-            return JagLion()
+        if isinstance(other, Jaglion):
+            return Jaglion()
 
         Panthera.getOffspring(self, other)

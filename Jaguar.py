@@ -1,5 +1,5 @@
 from __future__ import print_function
-import JagLion
+import Jaglion
 import Jagger
 import Jagjagupard
 import Jagleguar
@@ -29,7 +29,7 @@ class Jaguar(Panthera):
 
     def getOffspring(self, other):
         if isinstance(other, Lion.Lion):
-            return JagLion.JagLion()
+            return Jaglion.Jaglion()
         elif isinstance(other, Tiger.Tiger):
             return Jagger.Jagger()
         elif isinstance(other, Leopard.Leopard):

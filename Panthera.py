@@ -5,7 +5,7 @@ __author__ = 'raygomez'
 
 
 class Panthera(object):
-    def __init__(self, gender = random.choice('MF')):
+    def __init__(self, gender=random.choice('MF')):
         self.generation = 1
 
         if gender == 'M' or gender == 'F':
@@ -36,7 +36,7 @@ class Panthera(object):
 
         if not mother or not father:
             raise TypeError('They are not compatible: {}:{}, {}:{}'.
-                            format(self.name,self.gender,
+                            format(self.name, self.gender,
                                    other.name, self.gender))
 
         return father.getOffspring(mother)
@@ -44,14 +44,15 @@ class Panthera(object):
     def getOffspring(self, other):
         raise NotImplementedError('Unknown hybrid: {} + {}'.format(self.__class__.__name__,
                                                                    other.__class__.__name__))
+
     def getMaleName(self):
         raise NotImplementedError('GetMaleName should be implemented.')
 
     def getFemaleName(self):
         raise NotImplementedError('GetFemaleName should be implemented.')
 
-    def isMale(self):
-        return self.gender == 'M'
-
-    def isFemale(self):
-        return self.gender == 'F'
+    def __lt__(self, other):
+        if self.generation == other.generation:
+            return self.name < other.name
+        else:
+            return self.generation < other.generation
