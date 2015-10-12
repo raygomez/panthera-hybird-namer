@@ -1,11 +1,20 @@
 from __future__ import print_function
 import Jaguar
-from Leguar import Leguar
-from Leoger import Leoger
-from Leopon import Leopon
+import Jagupard
+import Leguar
+import Leoger
+import Leojagupard
+import Leoleguar
+import Leoliger
+import Leoliguar
+import Leopon
+import Leotigon
+import Liger
+import Liguar
 import Lion
 from Panthera import Panthera
 import Tiger
+import Tigon
 
 __author__ = 'raygomez'
 
@@ -21,9 +30,19 @@ class Leopard(Panthera):
         if isinstance(other, Leopard):
             return Leopard()
         elif isinstance(other, Lion.Lion):
-            return Leopon()
+            return Leopon.Leopon()
         elif isinstance(other, Tiger.Tiger):
-            return Leoger()
+            return Leoger.Leoger()
         elif isinstance(other, Jaguar.Jaguar):
-            return Leguar()
+            return Leguar.Leguar()
+        elif isinstance(other, Liger.Liger):
+            return Leoliger.Leoliger()
+        elif isinstance(other, Tigon.Tigon):
+            return Leotigon.Leotigon()
+        elif isinstance(other, Jagupard.Jagupard):
+            return Leojagupard.Leojagupard()
+        elif isinstance(other, Leguar.Leguar):
+            return Leoleguar.Leoleguar()
+        elif isinstance(other, Liguar.Liguar):
+            return Leoliguar.Leoliguar()
         Panthera.getOffspring(self, other)
