@@ -14,3 +14,4 @@ class Leopard(Panthera):
     def getOffspring(self, other):
         if isinstance(other, Leopard):
             return Leopard()
+        Panthera.getOffspring(self, other)

@@ -15,4 +15,4 @@ class Jaguar(Panthera):
     def getOffspring(self, other):
         if isinstance(other, Jaguar):
             return Jaguar()
-
+        Panthera.getOffspring(self, other)
