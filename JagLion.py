@@ -1,5 +1,6 @@
 from __future__ import print_function
 import random
+
 from Panthera import Panthera
 
 __author__ = 'ragomez'
@@ -12,10 +13,10 @@ class Jaglion(Panthera):
         self.generation = 2
 
     def getMaleName(self):
-        return 'JagLion'
+        return 'Jaglion'
 
     def getFemaleName(self):
-        return 'JagLioness'
+        return 'Jaglioness'
 
     def getOffspring(self, other):
         if isinstance(other, Jaglion):
